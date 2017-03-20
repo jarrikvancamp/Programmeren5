@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Werken met arrays</title>
+    <script>
+        var auto = [];
+        auto['owner'] = 'Kabouter Plop';
+        auto['merk'] = 'Bentley';
+
+        var persoon = {
+            voornaam: 'Mohammed',
+            familienaam: 'El Farisi',
+            naam: function() {
+                return this.voornaam + ' ' + this.familienaam
+            }
+        }
+
+        function showCarProp() {
+            alert('Plopperdeplop rijdt met een ' + auto.merk + ' ' + auto['merk']);
+        }
+
+        function showName() {
+            alert(persoon.naam());
+        }
+
+        function onTheFly() {
+            var naam = "Spa";
+            var type = "Spuitwater";
+            var drank = {
+                naam,
+                type
+            };
+            alert('Je hebt gekozen voor ' + drank.naam + ' ' + drank.type);
+        }
+        
+        function stenoDeclaration(greeting) {
+            var persoon = {
+                voornaam: 'An',
+                familienaam: 'Martens',
+                name(greeting) {return greeting + ' ' + this.voornaam + ' ' + this.familienaam;},
+                
+                naam: function(greeting) {
+                    return greeting + ' ' + 
+                    this.voornaam + ' ' 
+                    + this.familienaam;},
+                setVoornaam: function(value) {
+                    if (value.length > 0) {
+                        this.voornaam = value;
+                    } else {
+                        alert('Voornaam mag niet leeg zijn!')
+                    }
+                },
+                setFirstName(value) {
+                    if (value.length > 0) {
+                        this.voornaam = value;
+                    } else {
+                        alert('Voornaam mag niet leeg zijn!')
+                    }
+                }
+            }
+            
+            alert(persoon.naam(greeting));
+            persoon.setFirstName('Leila');
+            alert(persoon.name(greeting));
+        }
+        
+     
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="showCarProp();">Toon autoeigenschappen</button>
+    <button type="button" onclick="showName();">Toon naam</button>
+    <button type="button" onclick="onTheFly();">Drinken</button>
+      <button type="button" onclick="stenoDeclaration('Welkom');">Groeten</button>
+</body>
+
+</html>

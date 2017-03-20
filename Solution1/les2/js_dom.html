@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM manipuleren met JS</title>
+    <script>
+        var bigger = function(id) {
+            var elem = document.getElementById(id);
+            elem.style.fontSize = "4em";
+        }
+
+        var fillTable = function() {
+            var elem = document.getElementById('folder');
+            for (i = 0; i < elem.rows.length; i++) {
+                for (j = 0; j < elem.rows[i].cells.length; j++)
+                    elem.rows[i].cells[j].innerHTML = 'rij ' + i + ', kolom ' + j;
+            }
+        }
+
+        var fillTableWithTag = function() {
+            var cols = document.getElementsByTagName('td');
+            for (i = 0; i < cols.length; i++) {
+                cols[i].innerHTML = 'Cel: ' + i;
+            }
+        }
+
+        function markRow() {
+            //var cols = document.getElementsByClassName('mark');
+            var row = document.querySelector('.mark');
+            for (i = 0; i < row.cells.length; i++) {
+                row.cells[i].style.backgroundColor = 'yellow';
+            }
+        }
+
+        function markRows() {
+            //var cols = document.getElementsByClassName('mark');
+            var rows = document.querySelectorAll('.mark');
+            for (j = 0; j < rows.length; j++) {
+                for (i = 0; i < rows[j].cells.length; i++) {
+                    rows[j].cells[i].style.backgroundColor = 'yellow';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DOM en JS</h1>
+    <p id="text">Leren DOM manipuleren met JavaScript is fun!</p>
+    <button type="button" onclick="bigger('text');">Groter</button>
+    <button type="button" onclick="fillTable();">Tabel invullen</button>
+    <button type="button" onclick="fillTableWithTag();">Tabel invullen (tag selector)</button>
+    <button type="button" onclick="markRow();">Rij markeren</button>
+    <button type="button" onclick="markRows();">Rijen markeren</button>
+    <table id="folder">
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="mark">
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="mark">
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

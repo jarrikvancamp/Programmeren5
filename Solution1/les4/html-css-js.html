@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samenhang HTML, CSS en JS</title>
+    <style>
+        a {
+            width: 14em;
+            display: inline-block;
+            background: #fea url(images/arrow-up.gif) no-repeat right center;
+        }
+        
+        a.desc {
+             background: #fea url(images/arrow-dn-sel.gif) no-repeat right center;
+        }
+        
+        a.asc {
+             background: #fea url(images/arrow-up-sel.gif) no-repeat right center;
+        }
+    </style>
+    <script>
+        function change() {
+            var elem = document.getElementsByTagName('A');
+            if (elem[0].className == 'asc') {
+                elem[0].className = 'desc';
+            }
+            else {
+               elem[0].className = 'asc';
+            }
+        }
+        
+        function thisThat(elem) {
+            alert(elem.tagName)
+        }
+    </script>
+</head>
+<body>
+    <a class="asc" href="#" onclick="thisThat(this);">Quarter 1</a>
+</body>
+</html>

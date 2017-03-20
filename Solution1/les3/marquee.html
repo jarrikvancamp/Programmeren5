@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Alex Homer, Pro ASP.NET Web Forms Techniques, 2004 -->
+<html>
+
+<head>
+    <title>JavaScript - Een lichtkrant</title>
+    <meta charset="utf-8" />
+    <meta name="application-name" content="Multimedia JavaScript">
+    <meta name="description" content="De tijd controleren met JS - Een marquee maken met JavaScript">
+    <meta name="keywords" content="HTML, JavaScript, setInterval, setTimeout">
+    <meta name="author" content="Jef Inghelbrecht">
+    <script src="js/marquee.js" type="text/javascript"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            margin-bottom: 1em;
+            text-align: right;
+            width: 250px;
+        }
+        #marquee {
+            position: relative;
+            width: 250px;
+            height: 200px;
+            background-color: yellow;
+            padding: 5px;
+            overflow: hidden;
+        }
+        
+        #marquee #scroll-area {
+            position: absolute;
+            top: 0;
+            padding: 5px;
+        }
+        
+        .commandbar {
+            margin: 1em 0 0 0;
+            text-align: center;
+            width: 250px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>De gazet</h1>
+    <div id="marquee" onMouseover="pauseMarquee();" onMouseout="pauseMarquee();">
+        <div id="scroll-area">
+            Toen ik als kind van de buurtwinkel terugkwam met gruyèrekaas, maakte mijn oom, die wekelijks op bezoek kwam, telkens hetzelfde grapje: ‘Heb je ook betaald voor de gaatjes?’ Nu worden jeansbroeken met scheuren en gaten in vele winkels verkocht, soms voor
+            een (veel) hogere prijs dan een gewone jeans. Zo lanceerde het luxejeansmerk Dussault Apparel een Thrashed-versie voor maar liefst 250.000 dollar: een broek die al 13 keer gewassen was voor hij in de winkel kwam, tussendoor nog een paar keer
+            opnieuw geverfd om meer diepte aan de kleur te geven én enkele scheuren vertoonde.
+        </div>
+    </div>
+    <div class="commandbar">
+        <button onClick="speedUpMarquee();" type="button">Sneller</button>
+        <button onClick="slowDownMarquee();" type="button">Trager</button>
+    </div>
+</body>
+
+</html>

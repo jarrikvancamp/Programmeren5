@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Alex Homer, Pro ASP.NET Web Forms Techniques, 2004 -->
+<html>
+
+<head>
+    <title>JavaScript - Een autootje laten rijden</title>
+    <meta charset="utf-8" />
+    <meta name="application-name" content="Multimedia JavaScript">
+    <meta name="description" content="De tijd controleren met JS - Een autootje laten rijden">
+    <meta name="keywords" content="HTML, JavaScript, setInterval, setTimeout">
+    <meta name="author" content="Jef Inghelbrecht">
+    <script src="js/autootje.js" type="text/javascript"></script>
+    <style>
+        #car {
+            display: block;
+            left: 0px;
+            position: absolute;
+            top: 49px;
+            height: 50px;
+            width: 134px;
+        }
+        
+        #car2 {
+            display: block;
+            left: -134px;
+            position: absolute;
+            top: 49px;
+            height: 50px;
+            width: 134px;
+        }
+        
+        #banner {
+            display: block;
+            left: -370px;
+            position: absolute;
+            top: 0px;
+            height: 100px;
+            width: 370px;
+        }
+        
+        #force {
+            display: block;
+            left: 0px;
+            visibility: hidden;
+            position: absolute;
+            top: 15px;
+            height: 40px;
+            width: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            window.setTimeout(startAnimation, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <img id="car" alt="autootje" src="images/animtow2.gif" />
+    <img id="car2" alt="autootje met touw" src="images/animtow1.gif" />
+    <img id="banner" alt="banner" src="images/inantwerpen.png" />
+    <img id="force" alt="De drijvende kracht" src="images/force.gif" />
+</body>
+
+</html>

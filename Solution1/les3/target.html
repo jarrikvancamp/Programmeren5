@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leren werken met target</title>
+    <style>
+        .floor {
+            display: none;
+        }
+        
+        .floor:target {
+            display: block;
+        }
+    </style>
+    <script>
+        location.href="#third";
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="target.html#first">Eerste</a>
+        <a href="target.html#second">Tweede</a>
+
+        <a href="target.html#third">Derde</a>
+
+    </nav>
+    <div class="floor" id="first">
+        <div></div>
+        <div>Eerste</div>
+    </div>
+    <div class="floor" id="second">
+        <div></div>
+        <div>Tweede</div>
+    </div>
+    <div class="floor" id="third">
+        <div></div>
+        <div>Derde</div>
+    </div>
+</body>
+
+</html>

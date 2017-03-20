@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leren werken met events</title>
+    <script>
+        var verlaten = function() {
+            return confirm('Ben je zeker dat je de website wilt verlaten?');
+        }
+
+        function redBackground(element) {
+            element.target.style.backgroundColor = 'red';
+            element.target.style.color = 'white';
+        }
+
+        function whiteBackground(element) {
+            element.style.backgroundColor = 'white';
+            element.style.color = 'black';
+        }
+        
+        window.onload = function() {
+            var elem = document.getElementsByTagName('H2')[0];
+            elem.addEventListener('mouseover', redBackground, false);
+            elem.addEventListener('mouseout', whiteBackground, false);
+        }
+    </script>
+</head>
+
+<body>
+    <h1 onMouseOver="redBackground(this);" onMouseOut="whiteBackground(this);">Leren <span>werken</span> met events</h1>
+<h2>Traditioneel event registratie model</h2>
+
+</body>
+
+</html>
